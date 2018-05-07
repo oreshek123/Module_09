@@ -51,6 +51,7 @@
     <Compile Include="Task_03\Person.cs" />
     <Compile Include="Task_03\Professor.cs" />
     <Compile Include="Task_03\Student.cs" />
+    <Compile Include="Task_04\Commodity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

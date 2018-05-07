@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Module_09.Task_03;
+using Module_09.Task_04;
 
 namespace Module_09
 {
     class Program
     {
-        static void Main(string[] args)
+        public void Task_03()
         {
             int defCountOfPersons = 5;
             Console.WriteLine("Введите количество человек чтобы сгенерировать рандомно. P.S. минимум 5)");
@@ -50,7 +51,6 @@ namespace Module_09
                             Console.ForegroundColor = ConsoleColor.White;
                         }
                         break;
-
                     }
             }
             Console.WriteLine("Нажмите enter чтобы выйти или другую клавищу чтобы вернуться в начало");
@@ -59,6 +59,11 @@ namespace Module_09
                 Console.Clear();
                 goto start;
             }
+
+        }
+        static void Main(string[] args)
+        {
+            int choise = 0;
         }
 
         public static List<Person> GeneratePersons(int countOfPersons)
@@ -89,6 +94,5 @@ namespace Module_09
             }
             return persons;
         }
-
     }
 }
