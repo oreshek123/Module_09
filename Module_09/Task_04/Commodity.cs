@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using RandomNameGenerator;
 
 namespace Module_09.Task_04
 {
@@ -14,24 +16,31 @@ namespace Module_09.Task_04
     {
         public string ProductName { get; set; }
         public double Price { get; set; }
+        protected Random Rnd = new Random();
 
-        /// <summary>
-        /// Дата изготовления
-        /// </summary>
-        public DateTime DateOfManufacture { get; set; }
 
-        /// <summary>
-        /// Срок годности в месяцах
-        /// </summary>
-        public int ShelfLifeInMonths { get; set; }
-        
         /// <summary>
         /// Вывод всей информации об объекте
         /// </summary>
-        public void ShowInfo()
+        public virtual void ShowInfo()
         {
             foreach (PropertyInfo info in MemberwiseClone().GetType().GetProperties())
-                Console.WriteLine($"{info.Name} = {info.GetValue(this, null)}");
+            {
+                if (info.Name != "Products")
+                    Console.WriteLine($"{info.Name} = {info.GetValue(this, null)}");
+            }
         }
+
+        public virtual void GenerateRandomData()
+        {
+            this.ProductName = NameGenerator.GenerateFirstName((Gender)Rnd.Next(0, 2));
+            this.Price = Rnd.NextDouble()*Rnd.Next(1000,100000);
+        }
+
+        /// <summary>
+        /// Проверка товара на просроченность
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool IsOverdue() => false;
     }
 }
