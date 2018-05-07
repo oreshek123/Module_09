@@ -12,11 +12,10 @@ namespace Module_09.Task_04
     /// </summary>
     public class Batch : Commodity
     {
-        public Batch()
-        {
-            Products = new List<Product>();
-        }
-        public List<Product> Products { get; set; }
+        /// <summary>
+        /// Коллекция Продуктов
+        /// </summary>
+        public List<Product> Products { get; set; } = new List<Product>();
 
         /// <summary>
         /// Установка полной стоимости цены
@@ -46,7 +45,6 @@ namespace Module_09.Task_04
             }
             else
                 Console.WriteLine("There is no products in the Batch");
-            
         }
 
         public override bool IsOverdue() => Products.Count > 0 && Products.Any(a => a.IsOverdue());

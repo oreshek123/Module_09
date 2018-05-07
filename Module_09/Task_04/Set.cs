@@ -12,11 +12,14 @@ namespace Module_09.Task_04
     /// </summary>
     public class Set : Commodity
     {
-        public Set()
-        {
-            Products = new List<Product>();
-        }
-        public List<Product> Products { get; set; }
+        /// <summary>
+        /// Коллекция Продуктов
+        /// </summary>
+        public List<Product> Products { get; set; } = new List<Product>();
+
+        /// <summary>
+        /// Установка полной стоимости цены
+        /// </summary>
         private bool SetPrice()
         {
             if (Products.Count <= 0)

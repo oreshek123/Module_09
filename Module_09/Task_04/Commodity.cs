@@ -14,10 +14,20 @@ namespace Module_09.Task_04
     /// </summary>
     public abstract class Commodity
     {
+        /// <summary>
+        /// Название Товара
+        /// </summary>
         public string ProductName { get; set; }
-        public double Price { get; set; }
-        protected Random Rnd = new Random();
 
+        /// <summary>
+        /// Цена Товара
+        /// </summary>
+        public double Price { get; set; }
+
+        /// <summary>
+        /// Рандом для генерации данных
+        /// </summary>
+        protected Random Rnd = new Random();
 
         /// <summary>
         /// Вывод всей информации об объекте
@@ -31,6 +41,9 @@ namespace Module_09.Task_04
             }
         }
 
+        /// <summary>
+        /// Генерация рандомных данных
+        /// </summary>
         public virtual void GenerateRandomData()
         {
             this.ProductName = NameGenerator.GenerateFirstName((Gender)Rnd.Next(0, 2));
