@@ -10,7 +10,7 @@ namespace Module_09
         private static void Task_03()
         {
             int defCountOfPersons = 5;
-            Console.WriteLine("Введите количество человек чтобы сгенерировать рандомно. P.S. минимум 5)");
+            Console.WriteLine("Введите количество человек чтобы сгенерировать рандомно. минимум 5)");
             int.TryParse(Console.ReadLine(), out defCountOfPersons);
             List<Person> persons = GeneratePersons(defCountOfPersons);
 

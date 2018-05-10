@@ -13,6 +13,7 @@ namespace Module_09.Task_04
     /// </summary>
     public class Product : Commodity
     {
+        
         /// <summary>
         /// Дата изготовления
         /// </summary>
@@ -22,7 +23,6 @@ namespace Module_09.Task_04
         /// Срок годности в месяцах
         /// </summary>
         public int ShelfLifeInMonths { get; set; }
-
         public override void GenerateRandomData()
         {
             base.GenerateRandomData();
@@ -31,6 +31,12 @@ namespace Module_09.Task_04
             int randMonth = Rnd.Next(1, 12);
             int randDay = Rnd.Next(1, DateTime.DaysInMonth(randYear, randMonth));
             DateOfManufacture = DateTime.Parse($"{randYear}-{randMonth}-{randDay}");
+        }
+
+        public override void ShowInfo()
+        {
+            base.ShowInfo();
+            Console.WriteLine($"Дата изготовления : {DateOfManufacture}\nСрок годности в месяцах : {ShelfLifeInMonths}\n");
         }
 
         /// <summary>

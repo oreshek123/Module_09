@@ -30,6 +30,11 @@ namespace Module_09.Task_04
             this.Price = Products.Select(s => s.Price).ToList().Average() * Products.Count;
             return true;
         }
+
+        /// <summary>
+        /// Проверка на просроченность товара
+        /// </summary>
+        /// <returns>bool</returns>
         public override bool IsOverdue()
         {
             if (Products.Count > 0 && Products.Any(a => a.IsOverdue()))
@@ -54,8 +59,8 @@ namespace Module_09.Task_04
         public override void ShowInfo()
         {
             Console.WriteLine("-----------------------------------------------------");
-
-            Console.WriteLine($"SetName = {this.ProductName}\nPrice for Set = {(SetPrice() ? Price.ToString(CultureInfo.InvariantCulture) : "0")}");
+            Console.WriteLine($"SetName = {this.ProductName}\n" +
+                              $"Price for Set = {(SetPrice() ? Price.ToString(CultureInfo.InvariantCulture) : "0")}");
             Console.WriteLine("-----------------------------------------------------");
             if (Products.Count > 0)
             {

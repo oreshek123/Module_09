@@ -30,7 +30,7 @@ namespace Module_09.Task_04
             this.Price = Products.Select(s => s.Price).ToList().Average() * Products.Count;
             return true;
         }
-
+        
         public override void ShowInfo()
         {
             Console.WriteLine("-----------------------------------------------------");

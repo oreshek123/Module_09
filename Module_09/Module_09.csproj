@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Module_09</RootNamespace>
     <AssemblyName>Module_09</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GeneratorName">
+      <HintPath>..\..\..\..\Desktop\GeneratorName.dll</HintPath>
+    </Reference>
     <Reference Include="RandomNameGenerator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RandomNameGenerator.1.0.4\lib\RandomNameGenerator.dll</HintPath>
     </Reference>
